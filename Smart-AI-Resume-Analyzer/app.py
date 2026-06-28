@@ -1,6 +1,8 @@
 """
 NextGen Resume Analyzer - Main Application
+
 """
+import os
 import time
 from PIL import Image
 from jobs.job_search import render_job_search
@@ -112,6 +114,8 @@ class ResumeApp:
         init_database()
 
         # Load external CSS
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        css_path = os.path.join(current_dir, 'style', 'style.css')
         with open('style/style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
@@ -507,7 +511,8 @@ class ResumeApp:
     def load_image(self, image_name):
         """Load image from static directory"""
         try:
-            image_path = f"c:/Users/shree/Downloads/smart-resume-ai/{image_name}"
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            image_path = os.path.join(current_dir, "assets", image_name)
             with open(image_path, "rb") as f:
                 image_bytes = f.read()
             encoded = base64.b64encode(image_bytes).decode()
@@ -580,9 +585,9 @@ class ResumeApp:
             try:
                 # Extract text from resume
                 if uploaded_file.type == "application/pdf":
-                    resume_text = extract_text_from_pdf(uploaded_file)
+                    resume_text = self.analyzer.extract_text_from_pdf(uploaded_file)
                 else:
-                    resume_text = extract_text_from_docx(uploaded_file)
+                    resume_text = self.analyzer.extract_text_from_docx(uploaded_file)
 
                 # Store resume data
                 st.session_state.resume_data = {
