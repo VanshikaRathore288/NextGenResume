@@ -1185,7 +1185,7 @@ class ResumeApp:
                     <a href="https://github.com/VanshikaRathore288" class="social-link" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/vanshika-rathore" class="social-link" target="_blank">
+                    <a href="https://www.linkedin.com/in/vanshika-rathore-8b7654255" class="social-link" target="_blank">
                         <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="mailto:vanshika@example.com" class="social-link" target="_blank">
