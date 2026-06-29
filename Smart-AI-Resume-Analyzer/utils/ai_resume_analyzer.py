@@ -24,7 +24,22 @@ class AIResumeAnalyzer:
         
         # Configure Google Gemini AI
         self.google_api_key = os.getenv("GOOGLE_API_KEY")
+        if not self.google_api_key:
+            try:
+                import streamlit as st
+                if "GOOGLE_API_KEY" in st.secrets:
+                    self.google_api_key = st.secrets["GOOGLE_API_KEY"]
+            except Exception:
+                pass
+
         self.openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
+        if not self.openrouter_api_key:
+            try:
+                import streamlit as st
+                if "OPENROUTER_API_KEY" in st.secrets:
+                    self.openrouter_api_key = st.secrets["OPENROUTER_API_KEY"]
+            except Exception:
+                pass
         
         if self.google_api_key:
             genai.configure(api_key=self.google_api_key)

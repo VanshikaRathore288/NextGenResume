@@ -6,7 +6,9 @@ import time
 
 class FeedbackManager:
     def __init__(self):
-        self.db_path = "feedback/feedback.db"
+        import os
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.db_path = os.path.join(base_dir, "feedback.db")
         self.setup_database()
 
     def setup_database(self):

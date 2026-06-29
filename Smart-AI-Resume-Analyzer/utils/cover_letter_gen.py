@@ -6,6 +6,13 @@ class CoverLetterGenerator:
     def __init__(self):
         load_dotenv(os.path.join('utils', '.env'))
         self.google_api_key = os.getenv('GOOGLE_API_KEY')
+        if not self.google_api_key:
+            try:
+                import streamlit as st
+                if 'GOOGLE_API_KEY' in st.secrets:
+                    self.google_api_key = st.secrets['GOOGLE_API_KEY']
+            except Exception:
+                pass
         if self.google_api_key:
             genai.configure(api_key=self.google_api_key)
             self.model = genai.GenerativeModel('gemini-2.5-flash')

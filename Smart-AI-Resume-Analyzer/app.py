@@ -1182,10 +1182,10 @@ class ResumeApp:
                 <h2 class="profile-name">Vanshika Rathore (vanshika-rathore)</h2>
                 <p class="profile-title">Full Stack Developer & AI/ML Enthusiast</p>
                 <div class="social-links">
-                    <a href="https://github.com/vanshika-rathore" class="social-link" target="_blank">
+                    <a href="https://github.com/VanshikaRathore288" class="social-link" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/" class="social-link" target="_blank">
+                    <a href="https://linkedin.com/in/vanshika-rathore" class="social-link" target="_blank">
                         <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="mailto:vanshika@example.com" class="social-link" target="_blank">
